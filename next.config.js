@@ -7,6 +7,12 @@ const nextConfig = {
                 hostname: 'demoott01.s3.amazonaws.com',
                 port: '',
                 pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'picsum.photos',
+                port: '',
+                pathname: '/**',
             }
         ],
     }
