@@ -10,7 +10,6 @@ import {
 } from './definitions';
 import {formatCurrency} from './utils';
 import axios from 'axios';
-import { unstable_noStore as noStore } from 'next/cache';
 
 
 export async function getLives(): Promise<any> {
