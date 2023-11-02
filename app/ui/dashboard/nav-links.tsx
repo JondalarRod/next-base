@@ -18,7 +18,7 @@ const links = [
     {name: 'Home', href: '/dashboard', icon: HomeIcon},
     {name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon},
     {name: 'Lives', href: '/dashboard/lives', icon: FilmIcon},
-    {name: 'Pages', href: 'pages', icon: ArrowDownOnSquareStackIcon},
+    {name: 'Pages', href: '/dashboard/pages', icon: ArrowDownOnSquareStackIcon},
 ];
 
 export default function NavLinks() {
