@@ -2,6 +2,7 @@ import {lusitana} from '@/app/ui/fonts';
 import {getLives} from "@/app/lib/data";
 import Image from "next/image";
 import {Metadata} from 'next';
+import Link from "next/link";
 
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default async function Page() {
             keywords.push(item.title)
             metadata.archives = archives
             metadata.keywords = keywords
-            return <div key={item.id}>
+            return <div key={item.category_id}>
                 <Image
                     src={item.image}
                     className=""
@@ -28,7 +29,8 @@ export default async function Page() {
                     width={350}
                     height={100}
                 />
-                <h3>{item.title}</h3>
+                <Link href={`live/${item.category_id}`}><h3>{item.title}</h3></Link>
+
             </div>
         })
     )

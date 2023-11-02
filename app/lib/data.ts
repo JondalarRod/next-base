@@ -21,6 +21,12 @@ export async function getLives(): Promise<any> {
     return result
 }
 
+export async function getLiveDetail(idLive: string): Promise<any> {
+    const result =  await axios.get(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/detail/${idLive}`)
+    console.log(result)
+    return result
+}
+
 
 export async function fetchRevenue() {
     // Add noStore() here prevent the response from being cached.
