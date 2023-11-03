@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 async function Page() {
 
-    const data = await getLives()
+    const response = await getLives()
     let archives: string[] = []
     let keywords: string[] = []
-    console.log("response en PAGE", data)
+    console.log("response en PAGE", response)
     const RenderLives = () => (
-        data.items.map((item: any) => {
+        response.response.items.map((item: any) => {
             archives.push(item.thumbnail)
             keywords.push(item.title)
             metadata.archives = archives
