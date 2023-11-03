@@ -11,18 +11,22 @@ import {
 import {formatCurrency} from './utils';
 import axios from 'axios';
 
-
-
 export async function getLives(): Promise<any> {
 
     console.log("EN GET")
-    const result =  await fetch(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/live/1`)
+    const result = await fetch(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/live/1`,
+        {
+            next: {
+                revalidate: 60
+            }
+        }
+    )
     const data = await result.json()
-    return {response: data, revalidate: 10}
+    return data
 }
 
 export async function getLiveDetail(idLive: string): Promise<any> {
-    const result =  await axios.get(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/detail/${idLive}`)
+    const result = await axios.get(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/detail/${idLive}`)
     console.log(result)
     return result
 }

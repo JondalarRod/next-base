@@ -16,7 +16,7 @@ async function Page() {
     let keywords: string[] = []
     console.log("response en PAGE", response)
     const RenderLives = () => (
-        response.response.items.map((item: any) => {
+        response.items.map((item: any) => {
             archives.push(item.thumbnail)
             keywords.push(item.title)
             metadata.archives = archives
