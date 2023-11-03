@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     title: 'Lives',
 };
 
-export default async function Page() {
+async function Page() {
 
-    const response = await getLives()
+    const data = await getLives()
     let archives: string[] = []
     let keywords: string[] = []
-
+    console.log("response en PAGE", data)
     const RenderLives = () => (
-        response.data.items.map((item: any) => {
+        data.items.map((item: any) => {
             archives.push(item.thumbnail)
             keywords.push(item.title)
             metadata.archives = archives
@@ -47,3 +47,5 @@ export default async function Page() {
         </main>
     );
 }
+
+export default Page

@@ -16,9 +16,8 @@ import axios from 'axios';
 export async function getLives(): Promise<any> {
 
     console.log("EN GET")
-    const result =  await axios.get(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/live/1`)
-    console.log(result)
-    return result
+    const result =  await fetch(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/live/1`)
+    return result.json()
 }
 
 export async function getLiveDetail(idLive: string): Promise<any> {
