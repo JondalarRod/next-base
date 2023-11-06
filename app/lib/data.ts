@@ -17,7 +17,7 @@ export async function getLives(): Promise<any> {
     const result = await fetch(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/live/1`,
         {
             next: {
-                revalidate: 60
+                revalidate: 3600
             }
         }
     )

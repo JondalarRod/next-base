@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 export default async function LiveDetail({params}: { params: { id: string } }) {
     const itemID: any = params?.id;
     const {data} = await getLiveDetail(itemID);
+    metadata.title = data.title
+    metadata.description = data.description
     const RenderDetail = () => {
         return <>{data ?
             <>
