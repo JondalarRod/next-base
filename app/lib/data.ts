@@ -26,9 +26,10 @@ export async function getLives(): Promise<any> {
 }
 
 export async function getLiveDetail(idLive: string): Promise<any> {
-    const result = await axios.get(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/detail/${idLive}`)
-    console.log(result)
-    return result
+    const result = await fetch(`https://9z720zm66a.execute-api.us-east-1.amazonaws.com/prod/content/detail/${idLive}`)
+    const data = await result.json()
+    console.log(data)
+    return data
 }
 
 
